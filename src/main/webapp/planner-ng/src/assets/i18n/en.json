@@ -20,5 +20,9 @@
 	"register.password": "Password",
 	"register.surname": "Surname",
 	"register.text": "",
-	"register.title": "Registration"
+	"register.title": "Registration",
+	"selectLang.translate": "Translate to",
+	"selectLang.option": "Italian",
+	"Italiano": "Italian",
+	"Inglese": "English"
 }
