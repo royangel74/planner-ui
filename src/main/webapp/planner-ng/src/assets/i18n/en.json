@@ -20,5 +20,8 @@
 	"register.password": "Password",
 	"register.surname": "Surname",
 	"register.text": "",
-	"register.title": "Registration"
+	"register.title": "Registration",
+  "Espanol":"Spanish",
+  "Italiano": "Italian",
+  "English": "English"
 }

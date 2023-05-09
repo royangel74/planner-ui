@@ -1,0 +1,28 @@
+{
+	"home.getEvents": "Lista de Eventos",
+	"login.action": "Acceso",
+	"login.email": "Correo Electronico",
+	"login.link": "Register Here",
+	"login.password": "Password",
+	"login.text": "No tiene una cuenta?",
+	"login.title": "Acceso",
+	"navbar.action": "Action",
+	"navbar.action2": "Seconda Action",
+	"navbar.agenda": "Agenda",
+	"navbar.evento": "Evento",
+	"navbar.home": "Home",
+	"navbar.logout": "Salida",
+	"navbar.title": "Dev Planner",
+	"register.action": "",
+	"register.email": "Correo Electronico",
+	"register.link": "Iniciar sesión",
+	"register.name": "Nombre",
+	"register.password": "Password",
+	"register.surname": "Appellido",
+	"register.text": "",
+	"register.title": "Registration",
+  "Espanol":"Espanol",
+  "Italiano": "Italiano",
+  "English": "Ingles"
+
+}
