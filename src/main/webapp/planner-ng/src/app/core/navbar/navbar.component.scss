@@ -7,8 +7,31 @@
   a.nav-link,
   a.navbar-brand {
     color: $white;
-  }
+
+      span.sidebar{
+        color:yellow;
+        font-size: larger;
+      }
+
+
+
   li {
     list-style: none !important;
   }
+
+
+  select.form-select{
+    background-color: $darkBlue;
+    color: $white !important;
+    border-color: $darkBlue;
+  }
+
+}
+}
+
+.offcanvas{
+  background-color: $darkBlue;
+}
+.offcanvas-title{
+color: white;
 }

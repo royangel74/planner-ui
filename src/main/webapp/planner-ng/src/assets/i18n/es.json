@@ -12,7 +12,7 @@
 	"navbar.evento": "Evento",
 	"navbar.home": "Home",
 	"navbar.logout": "Salida",
-	"navbar.title": "Dev Planner",
+	"navbar.title": "DevPlanner",
 	"register.action": "",
 	"register.email": "Correo Electronico",
 	"register.link": "Iniciar sesión",
@@ -23,6 +23,15 @@
 	"register.title": "Registration",
   "Espanol":"Espanol",
   "Italiano": "Italiano",
-  "English": "Ingles"
+  "English": "Ingles",
+  "navbar.lenguage":"Seleciona Idioma",
+  "insert.Event":"Insertar un Evento",
+   "modaleEvent":{
+    "errorSame":"L orario di fin no puede ser igual a lo del principio",
+    "errorAfter":"Orario de fin tien que ser adelante a orario de principio",
+    "selectType":"Selectiona tipo Evento"
+  }
+
+
 
 }

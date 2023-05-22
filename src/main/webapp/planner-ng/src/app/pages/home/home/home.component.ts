@@ -1,22 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { EventService } from 'src/app/services/Event/event.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import {Event} from 'src/app/models/event.model';
+import { Event } from 'src/app/models/event.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges {
   events: Event[] = new Array();
   userEmail: any;
 
-  constructor(private authService: AuthService, private eventService: EventService) {}
+  constructor(
+    private authService: AuthService,
+    private eventService: EventService
+  ) {}
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
+    this.authService.GetEmail.subscribe((x) => (this.userEmail = x));
+    var obs = this.authService.GetEmail.asObservable();
   }
-
   logout() {
     this.authService.logout();
   }
@@ -32,5 +37,10 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes', changes);
+  }
+
 
 }

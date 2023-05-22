@@ -1,4 +1,4 @@
 export interface EventType {
     uidEventType: number;
-    eventName: string;
+    eventName?: string;
 }

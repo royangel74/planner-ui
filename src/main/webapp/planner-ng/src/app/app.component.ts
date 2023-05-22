@@ -1,25 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { AuthService } from './services/auth/auth.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Validators } from '@angular/forms';
+import { LanguageService } from './services/language.service';
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked, OnDestroy {
   title = 'planner-ui';
   userEmail: any;
   defaultLenguage: any;
-  arrayLenguage: Array<any> = [
-    { key: 'English', value: 'en' },
-    { key: 'Italiano', value: 'it' },
-    { key: 'Espanol', value: 'es' },
-  ];
+  arrayLenguage: any;
+  currentLenguage: any;
 
   constructor(
     private authService: AuthService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private language: LanguageService,
+    private changeDetector: ChangeDetectorRef
   ) {
     translate.getBrowserLang();
     this.defaultLenguage = translate.getBrowserLang();
@@ -29,6 +41,9 @@ export class AppComponent implements OnInit {
       translate.use(translate.defaultLang);
     }
   }
+  ngOnDestroy(): void {
+    this.language.setLanguage.unsubscribe();
+  }
 
   ngOnInit(): void {}
 
@@ -36,11 +51,21 @@ export class AppComponent implements OnInit {
     return this.authService.isLogged();
   }
 
-  select(value: any) {
-    let actualLenguage = value.target.value;
-    this.translate.setDefaultLang(actualLenguage);
-    this.translate.use(actualLenguage);
-    //Per settare la traduzione instantanee bisogna poter inserire, 
-    this.arrayLenguage.map(x => this.translate.instant(x.key));
+  select() {
+    this.language.getChangeLanguage.subscribe(
+      (x) => (this.currentLenguage = x)
+    );
+    this.translate.setDefaultLang(this.currentLenguage);
+    this.translate.use(this.currentLenguage);
+    let allLenguage: any = [];
+    this.language.getLanguage.subscribe((x) => (allLenguage = x));
+    allLenguage.map((c: { key: string | string[] }) =>
+      this.translate.instant(c.key)
+    );
+  }
+
+  ngAfterViewChecked(): void {
+    this.select();
+    this.changeDetector.detectChanges();
   }
 }

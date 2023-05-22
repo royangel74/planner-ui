@@ -14,15 +14,24 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CalendarComponent } from './calendar/calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { ModalEventComponent } from './calendar/modal-event/modal-event.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModaleconfermaComponent } from './modal/modaleconferma/modaleconferma.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, CalendarComponent, ModalEventComponent, ModaleconfermaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
     HttpClientModule,
+    FullCalendarModule,
+    FormsModule,
+    ReactiveFormsModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -35,6 +44,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}
 

@@ -12,7 +12,7 @@
 	"navbar.evento": "Event",
 	"navbar.home": "Home",
 	"navbar.logout": "Logout",
-	"navbar.title": "Dev Planner",
+	"navbar.title": "DevPlanner",
 	"register.action": "",
 	"register.email": "Email address",
 	"register.link": "Log in here",
@@ -23,5 +23,14 @@
 	"register.title": "Registration",
   "Espanol":"Spanish",
   "Italiano": "Italian",
-  "English": "English"
+  "English": "English",
+  "navbar.lenguage":"Select Lenguage",
+  "insert.Event":"Insert Event",
+ "modaleEvent":{
+    "errorSame":"timeStart is same timeEnd ",
+    "errorAfter":"timeStart is Before timeEnd",
+    "selectType":"Select type event"
+  }
+
+
 }

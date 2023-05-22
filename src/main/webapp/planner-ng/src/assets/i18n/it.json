@@ -23,9 +23,14 @@
 	"register.title": "Registrazione",
   "Espanol":"Spagnolo",
   "Italiano": "Italiano",
-  "English": "Inglese"
-
-
+  "English": "Inglese",
+  "navbar.lenguage":"Seleziona Lingua",
+  "insert.Event":"Inserisci un Evento",
+  "modaleEvent":{
+    "errorSame":"L orario di fine non puo essere uguale a quello di inizoo",
+    "errorAfter":"Orario di fine non puo essere futuro all orario di inizio",
+    "selectType":"Seleziona il tipo di evento"
+  }
 
 
 }

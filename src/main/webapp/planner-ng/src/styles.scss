@@ -1,1 +1,11 @@
 @import "global_variables.scss";
+
+
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+.popoverStyle{
+color: black;
+}
+

@@ -1,0 +1,63 @@
+
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">{{'insert.Event'| translate}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+	</div>
+	<div class="modal-body">
+  <form class="was-validated form-group" [formGroup]="eventForm">
+    <div class="row">
+    <div class="col-12">
+      <label for="validationFormInput1" class="form-label">Titolo</label>
+      <input type="text" class="form-control" formControlName="title" id="validationFormInput1" placeholder="Inserisci il titolo dell'evento" required>
+      <div class="invalid-feedback">
+        Inserisci il titolo all evento
+      </div>
+    </div>
+  </div>
+    <div class="row mt-1">
+      <div class="col-12 mt-1">
+        <label class="form-label" for="typeEvent">Tipologia Evento</label>
+        <select class="form-select" aria-label=".form-select-sm" formControlName="typeEvent" required>
+        <option value="" disabled>{{"modaleEvent.selectType" | translate}}</option>
+        <option [value]="item.uidEventType" *ngFor="let item of eventType ">{{changeEventName(item.eventName)|translate}}</option>
+     </select>
+     <div class="invalid-feedback">Inserisci una tipologia di Evento</div>
+      </div>
+    </div>
+  <!--   <div class="row">
+      <div class="col-12 mt-1">
+        <label class="form-label" for="dateStart">Data Inizio</label>
+        <input type="date" class="form-control" formControlName="dateStart" id="dateStart" placeholder="Inserisci da data inizio dell'evento">
+      </div>
+    </div> -->
+    <div class="row mt-1">
+      <div class="col mt-1">
+        <label class="form-label" for="validationFormInput2">Ora Inizio</label>
+        <input type="time" class="form-control" formControlName="timeStart" id="validationFormInput2" placeholder="Inserisci l'ora d'inizio" required>
+        <span class="error">{{getTimeError() | translate}}</span>
+      </div>
+      <div class="col mt-1">
+        <label class="form-label" for="validationFormInput3">Ora Fine</label>
+        <input type="time" class="form-control" formControlName="timeEnd" id="validationFormInput2" placeholder="Inserisci l'ora di fine" required >
+        <div class="invalid-feedback">
+          <span class="error">{{getTimeError() | translate}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-12 mt-1">
+        <label class="form-label" for="description">Descrizione</label>
+        <input type="text" class="form-control" formControlName="description" id="description" placeholder="Inserisci la descrizione dell'evento">
+      </div>
+    </div>
+  </form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" [disabled]="!eventForm.valid" (click)="onSubmit(eventForm)" >Save</button>
+	</div>
+
+
+
+
+
+

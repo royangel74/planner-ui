@@ -1,8 +1,12 @@
 <ng-container *ngIf="isLogged()">
   <app-navbar></app-navbar>
 </ng-container>
-<router-outlet></router-outlet>
-<select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example" (change)="select($event)">
-  <option selected [disabled]="true">Seleziona la lingua</option>
-  <option [value]="item.value" *ngFor="let item of arrayLenguage">{{item.key | translate}}</option>
-</select>
+
+
+  <router-outlet></router-outlet>
+
+
+
+
+
+
